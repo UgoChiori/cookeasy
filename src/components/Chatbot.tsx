@@ -1,6 +1,8 @@
 import React from 'react';
-import ChatBot from 'react-simple-chatbot'; // Ensure this is the correct import for ChatBot
-import FetchRecipe from '../FetchRecipe'; // Adjust the path if necessary
+import ChatBot from 'react-simple-chatbot'; 
+import FetchRecipe from '../FetchRecipe'; 
+import MessageParser from './MessageParser';
+import ActionProvider from './ActionProvider';
 
 const ChatbotComponent: React.FC = () => {
   const steps = [
@@ -21,7 +23,7 @@ const ChatbotComponent: React.FC = () => {
     },
     {
       id: 'fetch-recipe',
-      component: <FetchRecipe steps={{}} triggerNextStep={() => {}} />,
+      component: <FetchRecipe steps={{}} />,
       waitAction: true,
       trigger: '3',
     },
@@ -50,6 +52,9 @@ const ChatbotComponent: React.FC = () => {
         headerTitle="Food Recipe Assistant"
         recognitionEnable={true}
         steps={steps}
+       
+        actionProvider={ActionProvider}
+        messageParser={MessageParser} 
       />
     </div>
   );
