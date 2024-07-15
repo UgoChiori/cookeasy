@@ -61,7 +61,7 @@ const FetchRecipe: React.FC<FetchRecipeProps> = ({
     };
 
     fetchRecipe();
-  }, [steps, triggerNextStep]);
+  }, []);
 
   return loading ? (
     <div>Fetching recipe...</div>
