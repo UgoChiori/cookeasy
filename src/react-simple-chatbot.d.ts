@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'react-simple-chatbot' {
     import * as React from 'react';
   
@@ -45,6 +46,8 @@ declare module 'react-simple-chatbot' {
       handleClick?: () => void;
       handleUserInput?: (input: string) => void;
       userDelay?: number;
+      actionProvider?: React.FC<any>;
+      messageParser?: React.FC<any>;
     }
   
     export const ChatBot: React.FC<ChatBotProps>;
