@@ -3,7 +3,8 @@
 
 
 class MessageParser {
-    constructor(private actionProvider: MessageParserProps["actionProvider"]) {}
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    constructor(private actionProvider: any) {}
 
     parse(message: string) {
         console.log('recipe', message);
